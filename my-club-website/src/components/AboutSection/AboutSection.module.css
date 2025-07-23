@@ -1,0 +1,130 @@
+.topContainer {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: "text-box computerimg";
+  }
+   .textBox {
+    grid-area: text-box;
+  }
+   .computerImg {
+    grid-area: computerimg;
+  }
+   .computerImgMobile {
+    max-width: 100%;
+    max-height: 40%;
+    display: none;
+  }
+   .btnContainer {
+    width: 100%;
+    height: 100px;
+  }
+   .heroBtn {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    padding: 3% 25%;
+    margin: auto;
+  }
+   @media (max-width: 1314px) {
+    .computerImgMobile {
+      margin-left: auto;
+      margin-right: auto;
+      display: block;
+    }
+     .topContainer {
+      grid-template-columns: 1fr;
+      display: inline-block;
+      height: 100%;
+      padding-bottom: 10%;
+    }
+     .textBox h1 {
+      justify-content: center;
+      display: flex;
+      padding-left: 0%;
+    }
+     .textBox p {
+      justify-content: center;
+      text-align: center;
+      display: flex;
+      padding: 0 5%;
+      width: 100%;
+    }
+     .btnContainer {
+      width: 80%;
+      justify-content: center;
+      margin: auto;
+      display: flex;
+    }
+     .computerImg {
+      display: none;
+    }
+  }
+   /* Section 2 */
+  .section2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+  }
+   .dialoguebox {
+    position: relative;
+    text-align: center;
+  }
+   .diagMobile {
+    display: none;
+    max-width: 100%;
+  }
+   .diag {
+    max-width: 100%;
+  }
+   /* Section 3 */
+  .section3 {
+    padding: 3rem 1rem;
+    text-align: center;
+  }
+   .heading {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+  }
+   .pillarsWrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+  }
+   .pillars {
+    max-width: 100%;
+  }
+   .pillarsMobile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 2rem;
+  }
+   .pillarRectangle {
+    background: #00261C;
+    color: white;
+    padding: 0.75rem 2rem;
+    border-radius: 33px;
+    text-transform: uppercase;
+  }
+ 
+ 
+  .diagText {
+    margin-top: 1rem;
+    padding: 1.5rem 2rem;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #222;
+    text-align: center;
+  }
+   .mouse {
+    margin-top: 1.5rem;
+    width: 40px;
+    height: auto;
+  }
+ 
