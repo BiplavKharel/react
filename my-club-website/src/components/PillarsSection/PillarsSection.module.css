@@ -8,7 +8,7 @@
 }
 
 .header {
-  font-size: 3rem;
+  font-size: 4rem;
   font-family: var(--font-family-rubik);
   font-weight: var(--font-weight-bold);
   color: var(--color-accent-medium);
@@ -32,6 +32,7 @@
   box-shadow: 0 4px 10px var(--color-shadow-lighter);
   transition: transform 0.2s ease;
 }
+
 
 .pillarCard:hover {
   transform: translateY(-5px);

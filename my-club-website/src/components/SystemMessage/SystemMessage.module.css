@@ -33,7 +33,7 @@
 .header {
   background: #183d3d;
   color: #e8f6f3;
-  font-size: 1rem;
+  font-size: 1.5rem;
   padding: var(--spacing-sm) var(--spacing-md);
   display: flex;
   justify-content: space-between;

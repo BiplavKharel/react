@@ -55,7 +55,7 @@
 }
 
 .subtitle {
-  font-size: 1.75rem; /* bigger subtitle */
+  font-size: 1.825rem; /* bigger subtitle */
   color: var(--color-text-light);
   line-height: 1.6;
   margin-bottom: var(--spacing-xxl);
@@ -70,7 +70,7 @@
   font-weight: var(--font-weight-semibold);
   border: none;
   border-radius: var(--border-radius-circle);
-  font-size: 1.5rem;
+  font-size: 1.8rem;
   text-decoration: none;
   transition: all 0.3s ease;
   box-shadow: 0 4px 6px var(--color-shadow);
@@ -86,7 +86,7 @@
   flex: 1.4;
   display: flex;
   justify-content: center;
-  margin-top: var(--spacing-xxl);
+  margin-top: var(--spacing-xl);
 }
 
 .heroImage {
