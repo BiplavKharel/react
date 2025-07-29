@@ -58,7 +58,7 @@ const NavBar: React.FC = () => {
           <span></span>
           <ul className={styles.menuItem} style={{ transform: isMenuOpen ? 'none' : 'translate(100%, 0)' }}>
             <li><Link to="/" className="hvr-sweep-to-right" onClick={() => setIsMenuOpen(false)}>Home</Link></li>
-            <li><Link to="/eboard" className="hvr-sweep-to-right" onClick={() => setIsMenuOpen(false)}>Members</Link></li>
+            <li><Link to="/members" className="hvr-sweep-to-right" onClick={() => setIsMenuOpen(false)}>Members</Link></li>
             <li><Link to="/committees" className="hvr-sweep-to-right" onClick={() => setIsMenuOpen(false)}>Committees</Link></li>
             <li><Link to="/contact" className="hvr-sweep-to-right" onClick={() => setIsMenuOpen(false)}>Contact</Link></li>
             <li><Link to="/rush" className="hvr-sweep-to-right" onClick={() => setIsMenuOpen(false)}>Rush</Link></li>
