@@ -79,7 +79,7 @@ const committees = [
 export default function CommitteeSection() {
     return (
         <div className={styles.committeeDetails}>
-            <h2 className={styles.title}>Committees</h2>
+            <h2 className={styles.title}>Our Committees</h2>
 
             {committees.map((committee, idx) => (
                 <section

@@ -4,62 +4,40 @@ import styles from "./AboutSection.module.css";
 const AboutSection: React.FC = () => {
   return (
     <>
-      {/* Section 1: Top Container */}
-      <div className={styles.topContainer}>
-        <div className={styles.textBox}>
-          <h1 className={styles.title}>Zeta Pi</h1>
-          <p>
-            We are a Co-Ed Professional Technology Fraternity established in
-            2023 at the University of Michigan.
+      {/* Section 1: Hero */}
+      <div className={styles.heroSection}>
+        <div className={styles.textContainer}>
+          <h1 className={styles.title}>
+            <span>Z</span>
+            <span>e</span>
+            <span>t</span>
+            <span>a</span>
+            <span>&nbsp;</span>
+            <span>P</span>
+            <span>i</span>
+          </h1>
+
+          <p className={styles.subtitle}>
+            A Co-Ed Professional Technology Fraternity founded in 2023 at the
+            University of Michigan.
           </p>
-          <img
-            className={styles.computerImgMobile}
-            src="/images/computer.png"
-            alt="Computer Mobile"
-            loading="lazy"
-          />
-          <div className={styles.btnContainer}>
-            <a href="/rush">
-              <button className={styles.heroBtn}>Fall 2025 Rush</button>
-            </a>
-          </div>
+
+          <a href="/rush" className={styles.heroBtn}>
+            Fall 2025 Rush
+          </a>
         </div>
 
-        <div className={styles.computerImg}>
+        <div className={styles.imageContainer}>
           <img
             src="/images/computer.png"
             alt="Computer"
+            className={styles.heroImage}
             loading="lazy"
           />
         </div>
       </div>
 
-      {/* Section 2 */}
-      <section className={styles.section2}>
-        <div className={styles.dialoguebox}>
-          <img
-            className={styles.diagMobile}
-            src="/images/diag-mobile.svg"
-            alt="Dialogue Box Mobile"
-            loading="lazy"
-          />
-          <img
-            className={styles.diag}
-            src="/images/diag.svg"
-            alt="Dialogue Box"
-            loading="lazy"
-          />
-
-          <div className={styles.diagText}>
-            At Zeta Pi, our mission is to foster a community of passionate and
-            innovative technology enthusiasts who are dedicated to advancing
-            their skills, knowledge, and impact in the ever-evolving landscape
-            of technology. Through collaboration, mentorship, and a commitment
-            to excellence, we strive to create an environment where members can
-            thrive both personally and professionally.
-          </div>
-        </div>
-      </section>
+    
     </>
   );
 };
