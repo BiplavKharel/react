@@ -63,7 +63,7 @@ h1, h2, h3, h4 {
 /* Page Header */
 .page-header {
   background-color: var(--color-primary-dark);
-  width: 100vw;
+  width: 100%;
   height: var(--page-header-height);
   display: flex;
   justify-content: center;
