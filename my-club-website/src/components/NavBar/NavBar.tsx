@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
-import styles from './NavBar.module.css'; // Using CSS Modules
+import { Link, useLocation } from 'react-router-dom';
+import styles from './NavBar.module.css';
 
 const NavBar: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const location = useLocation();
 
   const handleLogoClick = (e: React.MouseEvent) => {
     const logo = document.getElementById('keycap-logo');
@@ -29,11 +30,46 @@ const NavBar: React.FC = () => {
         {/* Desktop Navigation */}
         <div className={styles.navLinks}>
           <ul className={styles.centerAlignC}>
-            <li><Link to="/" className="hvr-sweep-to-right">Home</Link></li>
-            <li><Link to="/eboard" className="hvr-sweep-to-right">Members</Link></li>
-            <li><Link to="/committees" className="hvr-sweep-to-right">Committees</Link></li>
-            <li><Link to="/contact" className="hvr-sweep-to-right">Contact</Link></li>
-            <li><Link to="/rush" className="hvr-sweep-to-right">Rush</Link></li>
+            <li>
+              <Link
+                to="/about"
+                className={`hvr-sweep-to-right ${location.pathname === "/about" ? styles.activeLink : ""}`}
+              >
+                About
+              </Link>
+            </li>
+            <li>
+              <Link
+                to="/eboard"
+                className={`hvr-sweep-to-right ${location.pathname === "/eboard" ? styles.activeLink : ""}`}
+              >
+                Members
+              </Link>
+            </li>
+            <li>
+              <Link
+                to="/committees"
+                className={`hvr-sweep-to-right ${location.pathname === "/committees" ? styles.activeLink : ""}`}
+              >
+                Committees
+              </Link>
+            </li>
+            <li>
+              <Link
+                to="/contact"
+                className={`hvr-sweep-to-right ${location.pathname === "/contact" ? styles.activeLink : ""}`}
+              >
+                Contact
+              </Link>
+            </li>
+            <li>
+              <Link
+                to="/rush"
+                className={`hvr-sweep-to-right ${location.pathname === "/rush" ? styles.activeLink : ""}`}
+              >
+                Rush
+              </Link>
+            </li>
           </ul>
         </div>
 
@@ -57,11 +93,51 @@ const NavBar: React.FC = () => {
           <span></span>
           <span></span>
           <ul className={styles.menuItem} style={{ transform: isMenuOpen ? 'none' : 'translate(100%, 0)' }}>
-            <li><Link to="/" className="hvr-sweep-to-right" onClick={() => setIsMenuOpen(false)}>Home</Link></li>
-            <li><Link to="/members" className="hvr-sweep-to-right" onClick={() => setIsMenuOpen(false)}>Members</Link></li>
-            <li><Link to="/committees" className="hvr-sweep-to-right" onClick={() => setIsMenuOpen(false)}>Committees</Link></li>
-            <li><Link to="/contact" className="hvr-sweep-to-right" onClick={() => setIsMenuOpen(false)}>Contact</Link></li>
-            <li><Link to="/rush" className="hvr-sweep-to-right" onClick={() => setIsMenuOpen(false)}>Rush</Link></li>
+            <li>
+              <Link
+                to="/about"
+                className={`hvr-sweep-to-right ${location.pathname === "/about" ? styles.activeLink : ""}`}
+                onClick={() => setIsMenuOpen(false)}
+              >
+                About
+              </Link>
+            </li>
+            <li>
+              <Link
+                to="/members"
+                className={`hvr-sweep-to-right ${location.pathname === "/members" ? styles.activeLink : ""}`}
+                onClick={() => setIsMenuOpen(false)}
+              >
+                Members
+              </Link>
+            </li>
+            <li>
+              <Link
+                to="/committees"
+                className={`hvr-sweep-to-right ${location.pathname === "/committees" ? styles.activeLink : ""}`}
+                onClick={() => setIsMenuOpen(false)}
+              >
+                Committees
+              </Link>
+            </li>
+            <li>
+              <Link
+                to="/contact"
+                className={`hvr-sweep-to-right ${location.pathname === "/contact" ? styles.activeLink : ""}`}
+                onClick={() => setIsMenuOpen(false)}
+              >
+                Contact
+              </Link>
+            </li>
+            <li>
+              <Link
+                to="/rush"
+                className={`hvr-sweep-to-right ${location.pathname === "/rush" ? styles.activeLink : ""}`}
+                onClick={() => setIsMenuOpen(false)}
+              >
+                Rush
+              </Link>
+            </li>
           </ul>
         </div>
       </nav>

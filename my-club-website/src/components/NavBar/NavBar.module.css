@@ -226,3 +226,28 @@
 .centerAlignC li {
   margin: 0 var(--spacing-lg);
 }
+
+/* Active link underline for current tab */
+.navLinks ul li a.activeLink {
+  position: relative;
+  padding-bottom: 4px;
+  border-bottom: 2px solid var(--color-accent-neon);
+  color: var(--color-accent-neon);
+}
+
+
+.navLinks ul li a.activeLink {
+  position: relative;
+  color: var(--color-accent-neon);
+}
+
+.navLinks ul li a.activeLink::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 100%;
+  height: 2px;
+  background-color: var(--color-accent-neon);
+  transition: width 0.3s ease;
+}

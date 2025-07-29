@@ -1,13 +1,23 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styles from './SystemMessage.module.css';
 
 const SystemMessage: React.FC = () => {
+  const [isClosing, setIsClosing] = useState(false);
+  const [isVisible, setIsVisible] = useState(true);
+
+  const handleClose = () => {
+    setIsClosing(true);
+    setTimeout(() => setIsVisible(false), 300); // Match CSS animation duration
+  };
+
+  if (!isVisible) return null;
+
   return (
-    <section className={styles.wrapper}>
+    <section className={`${styles.wrapper} ${isClosing ? styles.fadeOut : ''}`}>
       <div className={styles.window}>
         <div className={styles.header}>
           <span>System Message</span>
-          <button className={styles.close}>✕</button>
+          <button className={styles.close} onClick={handleClose}>✕</button>
         </div>
         <div className={styles.body}>
           <p>
@@ -15,6 +25,9 @@ const SystemMessage: React.FC = () => {
             <br /><br />
             Through collaboration, mentorship, and a commitment to excellence, we strive to create an environment where members can thrive both personally and professionally.
           </p>
+          <div className={styles.actions}>
+            <button className={styles.ok} onClick={handleClose}>OK</button>
+          </div>
         </div>
       </div>
     </section>
