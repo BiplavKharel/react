@@ -29,12 +29,11 @@ const NavBar: React.FC = () => {
         {/* Desktop Navigation */}
         <div className={styles.navLinks}>
           <ul className={styles.centerAlignC}>
-            <li><Link to="/" className="hvr-sweep-to-right">home</Link></li>
-            <li><Link to="/eboard" className="hvr-sweep-to-right">e-board</Link></li>
-            <li><Link to="/committees" className="hvr-sweep-to-right">committees</Link></li>
-            <li><Link to="/faq" className="hvr-sweep-to-right">FAQ</Link></li>
-            <li><Link to="/contact" className="hvr-sweep-to-right">contact</Link></li>
-            <li><Link to="/rush" className="hvr-sweep-to-right">rush</Link></li>
+            <li><Link to="/" className="hvr-sweep-to-right">Home</Link></li>
+            <li><Link to="/eboard" className="hvr-sweep-to-right">Members</Link></li>
+            <li><Link to="/committees" className="hvr-sweep-to-right">Committees</Link></li>
+            <li><Link to="/contact" className="hvr-sweep-to-right">Contact</Link></li>
+            <li><Link to="/rush" className="hvr-sweep-to-right">Rush</Link></li>
           </ul>
         </div>
 
@@ -58,12 +57,11 @@ const NavBar: React.FC = () => {
           <span></span>
           <span></span>
           <ul className={styles.menuItem} style={{ transform: isMenuOpen ? 'none' : 'translate(100%, 0)' }}>
-            <li><Link to="/" className="hvr-sweep-to-right" onClick={() => setIsMenuOpen(false)}>home</Link></li>
-            <li><Link to="/eboard" className="hvr-sweep-to-right" onClick={() => setIsMenuOpen(false)}>e-board</Link></li>
-            <li><Link to="/committees" className="hvr-sweep-to-right" onClick={() => setIsMenuOpen(false)}>committees</Link></li>
-            <li><Link to="/faq" className="hvr-sweep-to-right" onClick={() => setIsMenuOpen(false)}>FAQ</Link></li>
-            <li><Link to="/contact" className="hvr-sweep-to-right" onClick={() => setIsMenuOpen(false)}>contact</Link></li>
-            <li><Link to="/rush" className="hvr-sweep-to-right" onClick={() => setIsMenuOpen(false)}>rush</Link></li>
+            <li><Link to="/" className="hvr-sweep-to-right" onClick={() => setIsMenuOpen(false)}>Home</Link></li>
+            <li><Link to="/eboard" className="hvr-sweep-to-right" onClick={() => setIsMenuOpen(false)}>Members</Link></li>
+            <li><Link to="/committees" className="hvr-sweep-to-right" onClick={() => setIsMenuOpen(false)}>Committees</Link></li>
+            <li><Link to="/contact" className="hvr-sweep-to-right" onClick={() => setIsMenuOpen(false)}>Contact</Link></li>
+            <li><Link to="/rush" className="hvr-sweep-to-right" onClick={() => setIsMenuOpen(false)}>Rush</Link></li>
           </ul>
         </div>
       </nav>

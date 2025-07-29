@@ -1,3 +1,16 @@
+@import url('../../styles/variables.css');
+
+
+.title {
+  font-size: 150px;
+  color: var(--color-accent-medium);
+  font-weight: var(--font-weight-bold);
+  font-family: var(--font-family-rubik);
+  justify-content: center;
+  display: flex;
+  padding-left: 0%;
+  
+}
 .topContainer {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -5,6 +18,10 @@
   }
    .textBox {
     grid-area: text-box;
+    color:var(--color-accent-neon);
+    padding-left: 12%;
+    font-size: var(--spacing-xxl);
+  
   }
    .computerImg {
     grid-area: computerimg;
