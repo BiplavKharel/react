@@ -1,13 +1,21 @@
+// SystemMessage.tsx
 import React, { useState } from 'react';
 import styles from './SystemMessage.module.css';
 
-const SystemMessage: React.FC = () => {
+interface SystemMessageProps {
+  onClose: () => void;
+}
+
+const SystemMessage: React.FC<SystemMessageProps> = ({ onClose }) => {
   const [isClosing, setIsClosing] = useState(false);
   const [isVisible, setIsVisible] = useState(true);
 
   const handleClose = () => {
     setIsClosing(true);
-    setTimeout(() => setIsVisible(false), 300); // Match CSS animation duration
+    setTimeout(() => {
+      setIsVisible(false);
+      onClose(); // Notify parent
+    }, 300); // Match CSS animation duration
   };
 
   if (!isVisible) return null;
@@ -26,7 +34,7 @@ const SystemMessage: React.FC = () => {
             Through collaboration, mentorship, and a commitment to excellence, we strive to create an environment where members can thrive both personally and professionally.
           </p>
           <div className={styles.actions}>
-            <button className={styles.ok} onClick={handleClose}>OK</button>
+            <button className={styles.ok} onClick={handleClose}>OK!</button>
           </div>
         </div>
       </div>
