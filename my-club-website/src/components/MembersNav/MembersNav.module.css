@@ -1,0 +1,50 @@
+@import url('../../styles/variables.css');
+
+/* Wrapper to center nav */
+.categoryWrapper {
+  display: flex;
+  justify-content: center;
+  margin: var(--spacing-xl) auto;
+  max-width: 900px;
+  padding: 0 var(--spacing-md);
+}
+
+/* Modern pill-style nav group */
+.categoryBar {
+  display: flex;
+  gap: var(--spacing-md);
+  padding: var(--spacing-md);
+  border-radius: var(--border-radius-lg);
+  background-color: rgba(255, 255, 255, 0.04); /* subtle inner background */
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.25);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px); /* for Safari support */
+}
+
+/* Buttons inside the group */
+.categoryButton {
+  padding: var(--spacing-sm) var(--spacing-xl);
+  font-size: 16px;
+  border: none;
+  border-radius: var(--border-radius-circle);
+  background-color: transparent;
+  color: var(--color-text-light);
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background-color 0.25s ease, color 0.25s ease, transform 0.15s ease;
+}
+
+/* Hover state */
+.categoryButton:hover {
+  background-color: var(--color-hover-green);
+  color: var(--color-text-dark);
+}
+
+/* Active (selected) tab */
+.active {
+  background-color: var(--color-text-light);
+  color: var(--color-text-dark);
+  font-weight: var(--font-weight-medium);
+  transform: scale(1.03);
+}

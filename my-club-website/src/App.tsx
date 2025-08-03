@@ -4,7 +4,8 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 // Import your pages (will be created in upcoming steps)
  import HomePage from './pages/HomePage';
  import AboutPage from './pages/About';
-// import EboardPage from './pages/EboardPage';
+ import MembersPage from './pages/MembersPage';
+
  import CommitteesPage from './pages/CommitteesPage';
 // import FAQPage from './pages/FAQPage';
 // import ContactPage from './pages/ContactPage';
@@ -21,7 +22,7 @@ function App() {
         {/* Uncomment and update the HomePage import at the top */}
         <Route path="/" element={<HomePage />} />
         <Route path="/about" element={<AboutPage />} />
-        <Route path="/eboard" element={<div>E-Board Page Content</div>} />
+        <Route path="/eboard" element={<MembersPage />} />
         <Route path="/committees" element={<CommitteesPage/>} />
         <Route path="/contact" element={<div>Contact Page Content</div>} />
         <Route path="/rush" element={<div>Rush Page Content</div>} />

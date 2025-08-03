@@ -7,28 +7,22 @@ const eboard = [
     image: '/images/headshots/grace2.jpg',
     name: 'Grace Chen',
     position: 'President',
-    major: 'Computer Engineering',
-    graduation: '2027',
-  linkedin: 'https://www.linkedin.com/in/gracechen636/',
-  email: 'graceche@umich.edu'
+    major: 'Business Administration',
+    graduation: '2026',
   },
   {
     image: '/images/headshots/olivia2.jpg',
     name: 'Olivia Pinto',
     position: 'Vice President',
-    major: 'UX Design & Psychology',
-    graduation: '2026',
-      linkedin: 'https://www.linkedin.com/in/olivia-pinto-079382251/',
-  email: 'opinto@umich.edu'
+    major: 'Political Science',
+    graduation: '2025',
   },
   {
     image: '/images/headshots/sam.jpg',
     name: 'Sam Marquez',
     position: 'Director of DEI',
-    major: 'UX Design',
+    major: 'Sociology',
     graduation: '2026',
-      linkedin: 'https://www.linkedin.com/in/samira-marquez-gomez-017a86293/',
-  email: 'placeholder@example.com'
   },
   {
     image: '/images/headshots/abby.jpg',
@@ -36,8 +30,6 @@ const eboard = [
     position: 'Co-Head of Recruitment & Membership',
     major: 'Psychology',
     graduation: '2025',
-      linkedin: 'https://linkedin.com/in/gracechen',
-  email: 'grace@example.com'
   },
   {
     image: '/images/headshots/nicky.jpg',
@@ -45,8 +37,6 @@ const eboard = [
     position: 'Co-Head of Recruitment & Membership',
     major: 'Communications',
     graduation: '2025',
-      linkedin: 'https://linkedin.com/in/gracechen',
-  email: 'grace@example.com'
   },
   {
     image: '/images/headshots/eshaan.jpg',
@@ -54,8 +44,6 @@ const eboard = [
     position: 'Co-Head of Social',
     major: 'Economics',
     graduation: '2026',
-      linkedin: 'https://linkedin.com/in/gracechen',
-  email: 'grace@example.com'
   },
   {
     image: '/images/headshots/harry.jpg',
@@ -63,8 +51,6 @@ const eboard = [
     position: 'Co-Head of Social',
     major: 'Environmental Studies',
     graduation: '2026',
-      linkedin: 'https://linkedin.com/in/gracechen',
-  email: 'grace@example.com'
   },
   {
     image: '/images/headshots/samira.jpg',
@@ -72,8 +58,6 @@ const eboard = [
     position: 'Head of Marketing',
     major: 'Marketing',
     graduation: '2025',
-      linkedin: 'https://linkedin.com/in/gracechen',
-  email: 'grace@example.com'
   },
   {
     image: '/images/headshots/jeff.jpg',
@@ -81,8 +65,6 @@ const eboard = [
     position: 'Head of Professional Development',
     major: 'Computer Science',
     graduation: '2025',
-      linkedin: 'https://linkedin.com/in/gracechen',
-  email: 'grace@example.com'
   },
   {
     image: '/images/headshots/biplav2.jpg',
@@ -90,8 +72,6 @@ const eboard = [
     position: 'Head of Tech',
     major: 'Data Science',
     graduation: '2026',
-      linkedin: 'https://linkedin.com/in/gracechen',
-  email: 'grace@example.com'
   },
   {
     image: '/images/headshots/ky.jpg',
@@ -99,8 +79,6 @@ const eboard = [
     position: 'Head of Fundraising',
     major: 'Finance',
     graduation: '2026',
-      linkedin: 'https://linkedin.com/in/gracechen',
-  email: 'grace@example.com'
   }
 ];
 

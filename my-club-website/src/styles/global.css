@@ -41,7 +41,7 @@ a {
 h1, h2, h3, h4 {
   margin: 0.3em 0;
   font-family: var(--font-family-rubik); /* Default heading font */
-  color: var(--color-text-dark); /* Default heading color on light background */
+  color: var(--color-text-medium); /* Default heading color on light background */
 }
 
 /* Utility Classes */
