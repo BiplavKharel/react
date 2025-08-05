@@ -1,10 +1,10 @@
 import styles from './CommitteeSection.module.css';
-import technology_committee from '../../assets/CommitteeIcons/technology_committee.png';
-import professional_development_committee from '../../assets/CommitteeIcons/professional_development_committee.png';
-import recruitment_and_membership_committee from '../../assets/CommitteeIcons/recruitment_and_membership_committee.png';
-import social_committee from '../../assets/CommitteeIcons/social_committee.png';
-import marketing_committee from '../../assets/CommitteeIcons/marketing_committee.png';
-import fundraising_committee from '../../assets/CommitteeIcons/fundraising_committee.png';
+import technology_committee from '../../../public/images/CommitteeIcons/technology_committee.png';
+import professional_development_committee from '../../../public/images/CommitteeIcons/professional_development_committee.png';
+import recruitment_and_membership_committee from '../../../public/images/CommitteeIcons/recruitment_and_membership_committee.png';
+import social_committee from '../../../public/images/CommitteeIcons/social_committee.png';
+import marketing_committee from '../../../public/images/CommitteeIcons/marketing_committee.png';
+import fundraising_committee from '../../../public/images/CommitteeIcons/fundraising_committee.png';
 
 const committees = [
     {
