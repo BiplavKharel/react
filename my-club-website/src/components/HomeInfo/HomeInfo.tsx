@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react';
+import React, { useRef } from 'react';
 import PillarsSection from "../PillarsSection/PillarsSection";
 import styles from "./HomeInfo.module.css";
 import homeImage1 from '../../../public/images/HomeImages/HomeImage1.jpg';

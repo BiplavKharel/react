@@ -1,4 +1,4 @@
-import React, { useRef, useEffect } from "react";
+import React from "react";
 import styles from "./OurCommunity.module.css";
 
 import img1 from '../../../public/images/CommunityImages/img1.jpg';
