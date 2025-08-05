@@ -9,7 +9,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
  import CommitteesPage from './pages/CommitteesPage';
 // import FAQPage from './pages/FAQPage';
 // import ContactPage from './pages/ContactPage';
-// import RushPage from './pages/RushPage';
+ import RushPage from './pages/RushPage';
 
 import { NavBar } from './components/NavBar/NavBar'; // Always present
 // import { Footer } from './components/Footer/Footer'; // If you create a Footer component
@@ -25,7 +25,7 @@ function App() {
         <Route path="/eboard" element={<MembersPage />} />
         <Route path="/committees" element={<CommitteesPage/>} />
         <Route path="/contact" element={<div>Contact Page Content</div>} />
-        <Route path="/rush" element={<div>Rush Page Content</div>} />
+        <Route path="/rush" element={<RushPage />} />
             </Routes>
       {/* <Footer /> */} {/* If you create a Footer component */}
     </Router>
