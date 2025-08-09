@@ -1,8 +1,8 @@
 import React, { useRef } from 'react';
 import PillarsSection from "../PillarsSection/PillarsSection";
 import styles from "./HomeInfo.module.css";
-import homeImage1 from '../../../public/images/HomeImages/HomeImage1.jpg';
-import homeImage2 from '../../../public/images/HomeImages/HomeImage2.jpeg';
+import homeImage1 from '../../assets/HomeImages/HomeImage1.jpg';
+import homeImage2 from '../../assets/HomeImages/HomeImage2.jpeg';
 
 const HomeInfo: React.FC = () => {
     const pillarsRef = useRef<HTMLDivElement | null>(null);
