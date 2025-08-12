@@ -12,7 +12,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
  import RushPage from './pages/RushPage';
 
 import { NavBar } from './components/NavBar/NavBar'; // Always present
-// import { Footer } from './components/Footer/Footer'; // If you create a Footer component
+import { Footer } from './components/Footer/Footer'; 
 
 function App() {
   return (
@@ -27,7 +27,7 @@ function App() {
         <Route path="/contact" element={<div>Contact Page Content</div>} />
         <Route path="/rush" element={<RushPage />} />
             </Routes>
-      {/* <Footer /> */} {/* If you create a Footer component */}
+      <Footer />
     </Router>
   );
 }
