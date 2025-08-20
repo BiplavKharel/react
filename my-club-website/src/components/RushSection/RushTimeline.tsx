@@ -6,18 +6,19 @@ interface RushEvent {
   date: string;
   title: string;
   description: string;
+  //location: string;
 }
 
 const events: RushEvent[] = [
   {
     date: "Aug 25",
     title: "North Festifall",
-    description: "5-8 pm",
+    description: "Session 1 will be held from 5-8 pm",
   },
   {
     date: "Aug 27",
     title: "Central Festifall",
-    description: "Session 1: 2:00-3:30pm \n Session 2: 4:30-6:00pm \n Session 3: 7:00-8:30pm",
+    description: "Session 1: 2:00-3:30pm \n Session 2: 4:30-6:00pm \n Session 3: 7:00-8:30pm (Table E010)",
   },
   {
     date: "Aug 28 ~ Sept 4",
@@ -44,7 +45,7 @@ const RushTimeline: React.FC = () => {
             }`}
           >
             <div className={styles.content}>
-              <h3>{event.date} – {event.title}</h3>
+              <h3>{event.title} - {event.date}</h3>
               {event.description.split('\n').map((line, i) => (
                 <p key={i}>{line}</p>
             ))}
