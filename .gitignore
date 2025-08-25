@@ -1,2 +1,5 @@
 # dependencies
 /node_modules
+
+# misc (ds store is apple garbage)
+.DS_Store
