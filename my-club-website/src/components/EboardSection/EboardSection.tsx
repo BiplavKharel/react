@@ -28,25 +28,25 @@ const eboard = [
     major: 'UX Design',
     graduation: '2026',
       linkedin: 'https://www.linkedin.com/in/samira-marquez-gomez-017a86293/',
-  email: 'placeholder@example.com'
+  email: 'smarquez@umich.edu'
   },
   {
     image: '/images/headshots/abby.jpg',
     name: 'Abby Moomaw',
     position: 'Co-Head of Recruitment & Membership',
-    major: 'Psychology',
-    graduation: '2025',
-      linkedin: 'https://linkedin.com/in/gracechen',
-  email: 'grace@example.com'
+    major: 'Computer Science',
+    graduation: '2027',
+      linkedin: 'https://www.linkedin.com/in/abby-moomaw-261a7b2a2/',
+  email: 'amoomaw@umich.edu'
   },
   {
     image: '/images/headshots/nicky.jpg',
     name: 'Nicky Nguyen',
     position: 'Co-Head of Recruitment & Membership',
-    major: 'Communications',
-    graduation: '2025',
-      linkedin: 'https://linkedin.com/in/gracechen',
-  email: 'grace@example.com'
+    major: 'Computer Science',
+    graduation: '2027',
+      linkedin: 'https://www.linkedin.com/in/nicky-nguyen-0a1097277/',
+  email: 'nickyngu@umich.edu'
   },
   {
     image: '/images/headshots/eshaan.jpg',
@@ -54,53 +54,53 @@ const eboard = [
     position: 'Co-Head of Social',
     major: 'Economics',
     graduation: '2026',
-      linkedin: 'https://linkedin.com/in/gracechen',
-  email: 'grace@example.com'
+      linkedin: 'https://www.linkedin.com/in/eshaannair/',
+  email: 'enair@umich.edu'
   },
   {
     image: '/images/headshots/harry.jpg',
     name: 'Anthony Nguyen',
     position: 'Co-Head of Social',
-    major: 'Environmental Studies',
-    graduation: '2026',
-      linkedin: 'https://linkedin.com/in/gracechen',
-  email: 'grace@example.com'
+    major: 'Data Science',
+    graduation: '2028',
+      linkedin: 'https://www.linkedin.com/in/anthony-nguyen-0539a4317/',
+  email: 'anthenzo@umich.edu'
   },
   {
     image: '/images/headshots/samira.jpg',
     name: 'Samira Shalal',
     position: 'Head of Marketing',
-    major: 'Marketing',
-    graduation: '2025',
-      linkedin: 'https://linkedin.com/in/gracechen',
-  email: 'grace@example.com'
+    major: 'Computer Science',
+    graduation: '2027',
+      linkedin: 'https://www.linkedin.com/in/samira-shalal-130801326/',
+  email: 'samirash@umich.edu'
   },
   {
     image: '/images/headshots/jeff.jpg',
     name: 'Jeff Zheng',
     position: 'Head of Professional Development',
-    major: 'Computer Science',
+    major: 'Data Science & Econ',
     graduation: '2025',
-      linkedin: 'https://linkedin.com/in/gracechen',
-  email: 'grace@example.com'
+      linkedin: 'https://www.linkedin.com/in/jeffrey-zhiyu-zheng-8aa992264/',
+  email: 'jefzheng@umich.edu'
   },
   {
     image: '/images/headshots/biplav2.jpg',
     name: 'Biplav Kharel',
     position: 'Head of Tech',
     major: 'Data Science',
-    graduation: '2026',
-      linkedin: 'https://linkedin.com/in/gracechen',
-  email: 'grace@example.com'
+    graduation: '2027',
+      linkedin: 'https://www.linkedin.com/in/biplavkharel/',
+  email: 'khbiplav@umich.edu'
   },
   {
     image: '/images/headshots/ky.jpg',
     name: 'Ky Park',
     position: 'Head of Fundraising',
-    major: 'Finance',
+    major: 'Computer Science',
     graduation: '2026',
-      linkedin: 'https://linkedin.com/in/gracechen',
-  email: 'grace@example.com'
+      linkedin: 'https://www.linkedin.com/in/kyran-park-825853250/',
+  email: 'kyranp@umich.edu'
   }
 ];
 
