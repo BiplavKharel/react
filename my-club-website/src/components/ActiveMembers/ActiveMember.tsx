@@ -1,13 +1,16 @@
+// ActiveMember.tsx
 import React from 'react';
 import styles from './ActiveMember.module.css';
 
 type ActiveMemberProps = {
-  image: string;
+  image?: string;
   name: string;
   major: string;
   graduation: string;
   linkedin?: string;
 };
+
+const DEFAULT_IMG = '/images/zp_logo.png';
 
 const ActiveMember: React.FC<ActiveMemberProps> = ({
   image,
@@ -16,23 +19,30 @@ const ActiveMember: React.FC<ActiveMemberProps> = ({
   graduation,
   linkedin
 }) => {
+  const imgSrc = image && image.trim() ? image : DEFAULT_IMG;
+
   return (
     <div className={styles.memberCard}>
       <div className={styles.imageWrapper}>
-        <img src={image} alt={name} className={styles.photo} />
+        <img src={imgSrc} alt={name} className={styles.photo} />
         <div className={styles.overlay}>
           <p><strong>Major:</strong> {major}</p>
           <p><strong>Class of:</strong> {graduation}</p>
         </div>
       </div>
-      <a
-        href={linkedin || '#'}
-        target="_blank"
-        rel="noopener noreferrer"
-        className={styles.name}
-      >
-        {name}
-      </a>
+
+      {linkedin && linkedin.trim() ? (
+        <a
+          href={linkedin}
+          target="_blank"
+          rel="noopener noreferrer"
+          className={styles.name}
+        >
+          {name}
+        </a>
+      ) : (
+        <span className={styles.name}>{name}</span>
+      )}
     </div>
   );
 };

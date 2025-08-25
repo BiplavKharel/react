@@ -47,6 +47,16 @@ const NavBar: React.FC = () => {
             </li>
             <li>
               <Link
+                to="/rush"
+                className={`hvr-sweep-to-right ${
+                  location.pathname === '/rush' ? styles.activeLink : ''
+                }`}
+              >
+                Rush
+              </Link>
+            </li>
+            <li>
+              <Link
                 to="/eboard"
                 className={`hvr-sweep-to-right ${
                   location.pathname === '/eboard' ? styles.activeLink : ''
@@ -73,16 +83,6 @@ const NavBar: React.FC = () => {
                 }`}
               >
                 Contact
-              </Link>
-            </li>
-            <li>
-              <Link
-                to="/rush"
-                className={`hvr-sweep-to-right ${
-                  location.pathname === '/rush' ? styles.activeLink : ''
-                }`}
-              >
-                Rush
               </Link>
             </li>
           </ul>
@@ -136,6 +136,17 @@ const NavBar: React.FC = () => {
             </li>
             <li>
               <Link
+                to="/rush"
+                className={`hvr-sweep-to-right ${
+                  location.pathname === '/rush' ? styles.activeLink : ''
+                }`}
+                onClick={() => setIsMenuOpen(false)}
+              >
+                Rush
+              </Link>
+            </li>
+            <li>
+              <Link
                 to="/members"
                 className={`hvr-sweep-to-right ${
                   location.pathname === '/members' ? styles.activeLink : ''
@@ -165,17 +176,6 @@ const NavBar: React.FC = () => {
                 onClick={() => setIsMenuOpen(false)}
               >
                 Contact
-              </Link>
-            </li>
-            <li>
-              <Link
-                to="/rush"
-                className={`hvr-sweep-to-right ${
-                  location.pathname === '/rush' ? styles.activeLink : ''
-                }`}
-                onClick={() => setIsMenuOpen(false)}
-              >
-                Rush
               </Link>
             </li>
           </ul>
