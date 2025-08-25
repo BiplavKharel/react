@@ -1,6 +1,7 @@
 import React from 'react';
 import styles from './EboardSection.module.css';
 import EboardMember from './EboardMember';
+import ImagePreloader from './ImagePreloader';
 
 const eboard = [
   {
@@ -113,22 +114,28 @@ const rows = [
 ];
 
 const EboardSection: React.FC = () => {
+  // Extract all image URLs for preloading
+  const imageUrls = eboard.map(member => member.image);
+  
   return (
-    <div className={styles.gridWrapper}>
-      {rows.map((row, rowIndex) => (
-        <div key={rowIndex} className={styles.gridRow}>
-          {row.map((member, idx) => (
-            <div
-              key={idx}
-              className={styles.fadeIn}
-              style={{ animationDelay: `${(rowIndex * 4 + idx) * 0.05}s` }}
-            >
-              <EboardMember {...member} />
-            </div>
-          ))}
-        </div>
-      ))}
-    </div>
+    <>
+      <ImagePreloader images={imageUrls} />
+      <div className={styles.gridWrapper}>
+        {rows.map((row, rowIndex) => (
+          <div key={rowIndex} className={styles.gridRow}>
+            {row.map((member, idx) => (
+              <div
+                key={idx}
+                className={styles.fadeIn}
+                style={{ animationDelay: `${(rowIndex * 4 + idx) * 0.05}s` }}
+              >
+                <EboardMember {...member} />
+              </div>
+            ))}
+          </div>
+        ))}
+      </div>
+    </>
   );
 };
 

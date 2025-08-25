@@ -21,10 +21,24 @@ const ActiveMember: React.FC<ActiveMemberProps> = ({
 }) => {
   const imgSrc = image && image.trim() ? image : DEFAULT_IMG;
 
+  const handleImageError = (e: React.SyntheticEvent<HTMLImageElement, Event>) => {
+    const target = e.target as HTMLImageElement;
+    if (target.src !== DEFAULT_IMG) {
+      target.src = DEFAULT_IMG;
+      target.onerror = null; // Prevent infinite loop
+    }
+  };
+
   return (
     <div className={styles.memberCard}>
       <div className={styles.imageWrapper}>
-        <img src={imgSrc} alt={name} className={styles.photo} />
+        <img 
+          src={imgSrc} 
+          alt={name} 
+          className={styles.photo} 
+          onError={handleImageError}
+          loading="lazy"
+        />
         <div className={styles.overlay}>
           <p><strong>Major:</strong> {major}</p>
           <p><strong>Class of:</strong> {graduation}</p>

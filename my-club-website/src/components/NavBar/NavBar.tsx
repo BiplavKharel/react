@@ -6,7 +6,7 @@ const NavBar: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const location = useLocation();
 
-  const handleLogoClick = (e: React.MouseEvent) => {
+  const handleLogoClick = () => {
     const logo = document.getElementById('keycap-logo');
     if (logo) {
       logo.classList.add(styles.clicked);
@@ -57,9 +57,9 @@ const NavBar: React.FC = () => {
             </li>
             <li>
               <Link
-                to="/eboard"
+                to="/members"
                 className={`hvr-sweep-to-right ${
-                  location.pathname === '/eboard' ? styles.activeLink : ''
+                  location.pathname === '/members' ? styles.activeLink : ''
                 }`}
               >
                 Members

@@ -48,3 +48,37 @@
   font-weight: var(--font-weight-medium);
   transform: scale(1.03);
 }
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  .categoryWrapper {
+    margin: var(--spacing-lg) auto;
+    padding: 0 var(--spacing-sm);
+  }
+  
+  .categoryBar {
+    padding: var(--spacing-sm);
+    gap: var(--spacing-sm);
+  }
+  
+  .categoryButton {
+    padding: var(--spacing-xs) var(--spacing-lg);
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .categoryWrapper {
+    margin: var(--spacing-md) auto;
+  }
+  
+  .categoryBar {
+    flex-direction: row;
+    justify-content: center;
+  }
+  
+  .categoryButton {
+    padding: var(--spacing-xs) var(--spacing-md);
+    font-size: 13px;
+  }
+}

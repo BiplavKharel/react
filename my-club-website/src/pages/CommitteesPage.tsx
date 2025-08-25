@@ -1,6 +1,5 @@
 import React from 'react';
 import CommitteeSection from '../components/CommitteeSection/CommitteeSection';
-import Committee from '../components/CommitteeSection/Committe.tsx';
 
 const CommitteesPage: React.FC = () => {
     // return (

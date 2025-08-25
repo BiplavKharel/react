@@ -19,6 +19,11 @@ const chunkArray = (arr: ActiveMember[], size: number) =>
 const rows = chunkArray(members, 5);
 
 const ActiveMembersSection: React.FC = () => {
+  const handleImageError = (e: React.SyntheticEvent<HTMLImageElement, Event>) => {
+    const target = e.target as HTMLImageElement;
+    target.src = '/images/zp_logo.png';
+  };
+
   return (
     <div className={styles.wrapper}>
       <h2 className={styles.title}>Active Members</h2>
@@ -32,9 +37,11 @@ const ActiveMembersSection: React.FC = () => {
             >
               <div className={styles.imageWrapper}>
                 <img
-                  src={member.image && member.image.trim() ? member.image : '/images/zp_logo.png'}
+                  src={member.image}
                   alt={member.name}
                   className={styles.image}
+                  onError={handleImageError}
+                  loading="lazy"
                 />
                 <div className={styles.overlay}>
                   <p><strong>Major:</strong> {member.major}</p>
