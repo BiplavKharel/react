@@ -5,7 +5,6 @@
   width: 100vw;
   position: relative;
   z-index: 2;
-  
 }
 
 .menuRight {
@@ -47,11 +46,32 @@
   font-family: var(--font-family-rubik), var(--font-family-pt-sans), var(--font-family-calibri), var(--font-family-tahoma);
   font-weight: var(--font-weight-medium);
   word-wrap: break-word;
-  transition: color 0.3s ease;
+  transition: color 0.3s ease, border-bottom-color 0.3s ease;
+  border-bottom: 2px solid transparent; /* underline handled via border for reliability */
 }
 
-.navLinks ul li a:hover {
+/* Hover = neon color, only if NOT active */
+.navLinks ul li a:hover:not(.activeLink) {
   color: var(--color-accent-neon);
+}
+
+/* Prevent focus from making it look hovered after click */
+.navLinks ul li a:focus,
+.navLinks ul li a:focus-visible {
+  color: var(--color-accent-medium);
+  outline: 2px solid transparent; /* keep layout stable; add custom outline if desired */
+}
+
+/* Active link = base text color + persistent neon underline */
+.navLinks ul li a.activeLink {
+  color: var(--color-accent-medium);                 /* <-- base color, not neon */
+  padding-bottom: 4px;
+  border-bottom-color: var(--color-accent-neon);    /* underline stays */
+}
+
+/* Don't recolor active link on hover */
+.navLinks ul li a.activeLink:hover {
+  color: var(--color-accent-medium);
 }
 
 .icons {
@@ -225,29 +245,4 @@
 
 .centerAlignC li {
   margin: 0 var(--spacing-lg);
-}
-
-/* Active link underline for current tab */
-.navLinks ul li a.activeLink {
-  position: relative;
-  padding-bottom: 4px;
-  border-bottom: 2px solid var(--color-accent-neon);
-  color: var(--color-accent-neon);
-}
-
-
-.navLinks ul li a.activeLink {
-  position: relative;
-  color: var(--color-accent-neon);
-}
-
-.navLinks ul li a.activeLink::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: -2px;
-  width: 100%;
-  height: 2px;
-  background-color: var(--color-accent-neon);
-  transition: width 0.3s ease;
 }

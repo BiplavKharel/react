@@ -24,7 +24,12 @@ const NavBar: React.FC = () => {
     <section className={styles.navBar}>
       <nav className={styles.menuRight} role="navigation">
         <Link to="/" id="logo-link" onClick={handleLogoClick}>
-          <img src="/images/zp_logo.png" id="keycap-logo" alt="Zeta Pi Logo" className={styles.keycapLogo} />
+          <img
+            src="/images/zp_logo.png"
+            id="keycap-logo"
+            alt="Zeta Pi Logo"
+            className={styles.keycapLogo}
+          />
         </Link>
 
         {/* Desktop Navigation */}
@@ -32,8 +37,10 @@ const NavBar: React.FC = () => {
           <ul className={styles.centerAlignC}>
             <li>
               <Link
-                to="/about"
-                className={`hvr-sweep-to-right ${location.pathname === "/about" ? styles.activeLink : ""}`}
+                to="/"
+                className={`hvr-sweep-to-right ${
+                  location.pathname === '/' ? styles.activeLink : ''
+                }`}
               >
                 About
               </Link>
@@ -41,7 +48,9 @@ const NavBar: React.FC = () => {
             <li>
               <Link
                 to="/eboard"
-                className={`hvr-sweep-to-right ${location.pathname === "/eboard" ? styles.activeLink : ""}`}
+                className={`hvr-sweep-to-right ${
+                  location.pathname === '/eboard' ? styles.activeLink : ''
+                }`}
               >
                 Members
               </Link>
@@ -49,7 +58,9 @@ const NavBar: React.FC = () => {
             <li>
               <Link
                 to="/committees"
-                className={`hvr-sweep-to-right ${location.pathname === "/committees" ? styles.activeLink : ""}`}
+                className={`hvr-sweep-to-right ${
+                  location.pathname === '/committees' ? styles.activeLink : ''
+                }`}
               >
                 Committees
               </Link>
@@ -57,7 +68,9 @@ const NavBar: React.FC = () => {
             <li>
               <Link
                 to="/contact"
-                className={`hvr-sweep-to-right ${location.pathname === "/contact" ? styles.activeLink : ""}`}
+                className={`hvr-sweep-to-right ${
+                  location.pathname === '/contact' ? styles.activeLink : ''
+                }`}
               >
                 Contact
               </Link>
@@ -65,7 +78,9 @@ const NavBar: React.FC = () => {
             <li>
               <Link
                 to="/rush"
-                className={`hvr-sweep-to-right ${location.pathname === "/rush" ? styles.activeLink : ""}`}
+                className={`hvr-sweep-to-right ${
+                  location.pathname === '/rush' ? styles.activeLink : ''
+                }`}
               >
                 Rush
               </Link>
@@ -75,13 +90,25 @@ const NavBar: React.FC = () => {
 
         {/* Social Media Icons (Desktop) */}
         <div className={styles.icons} id="socialMedia">
-          <a href="https://www.linkedin.com/company/91309323/admin/feed/posts/" target="_blank" rel="noopener noreferrer">
+          <a
+            href="https://www.linkedin.com/company/91309323/admin/feed/posts/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <i className="Li fab fa-linkedin"></i>
           </a>
-          <a href="https://www.instagram.com/zetapi.umich/" target="_blank" rel="noopener noreferrer">
+          <a
+            href="https://www.instagram.com/zetapi.umich/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <i className="Li fab fa-instagram"></i>
           </a>
-          <a href="https://www.tiktok.com/@zetapiumich" target="_blank" rel="noopener noreferrer">
+          <a
+            href="https://www.tiktok.com/@zetapiumich"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <i className="Li fab fa-tiktok"></i>
           </a>
         </div>
@@ -92,11 +119,16 @@ const NavBar: React.FC = () => {
           <span></span>
           <span></span>
           <span></span>
-          <ul className={styles.menuItem} style={{ transform: isMenuOpen ? 'none' : 'translate(100%, 0)' }}>
+          <ul
+            className={styles.menuItem}
+            style={{ transform: isMenuOpen ? 'none' : 'translate(100%, 0)' }}
+          >
             <li>
               <Link
-                to="/about"
-                className={`hvr-sweep-to-right ${location.pathname === "/about" ? styles.activeLink : ""}`}
+                to="/"
+                className={`hvr-sweep-to-right ${
+                  location.pathname === '/' ? styles.activeLink : ''
+                }`}
                 onClick={() => setIsMenuOpen(false)}
               >
                 About
@@ -105,7 +137,9 @@ const NavBar: React.FC = () => {
             <li>
               <Link
                 to="/members"
-                className={`hvr-sweep-to-right ${location.pathname === "/members" ? styles.activeLink : ""}`}
+                className={`hvr-sweep-to-right ${
+                  location.pathname === '/members' ? styles.activeLink : ''
+                }`}
                 onClick={() => setIsMenuOpen(false)}
               >
                 Members
@@ -114,7 +148,9 @@ const NavBar: React.FC = () => {
             <li>
               <Link
                 to="/committees"
-                className={`hvr-sweep-to-right ${location.pathname === "/committees" ? styles.activeLink : ""}`}
+                className={`hvr-sweep-to-right ${
+                  location.pathname === '/committees' ? styles.activeLink : ''
+                }`}
                 onClick={() => setIsMenuOpen(false)}
               >
                 Committees
@@ -123,7 +159,9 @@ const NavBar: React.FC = () => {
             <li>
               <Link
                 to="/contact"
-                className={`hvr-sweep-to-right ${location.pathname === "/contact" ? styles.activeLink : ""}`}
+                className={`hvr-sweep-to-right ${
+                  location.pathname === '/contact' ? styles.activeLink : ''
+                }`}
                 onClick={() => setIsMenuOpen(false)}
               >
                 Contact
@@ -132,7 +170,9 @@ const NavBar: React.FC = () => {
             <li>
               <Link
                 to="/rush"
-                className={`hvr-sweep-to-right ${location.pathname === "/rush" ? styles.activeLink : ""}`}
+                className={`hvr-sweep-to-right ${
+                  location.pathname === '/rush' ? styles.activeLink : ''
+                }`}
                 onClick={() => setIsMenuOpen(false)}
               >
                 Rush

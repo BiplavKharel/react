@@ -9,7 +9,7 @@ import ActiveMembersSection from '../components/ActiveMembers/ActiveMembersSecti
 const MembersPage: React.FC = () => {
 const [selectedCategory, setSelectedCategory] = useState('E-Board');
 
-  const categories = ['E-Board', 'Active Members', 'Alumni'];
+  const categories = ['E-Board', 'Active Members'];
 
   return (
     <div className={styles.page}>

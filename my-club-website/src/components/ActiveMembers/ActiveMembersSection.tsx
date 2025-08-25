@@ -12,14 +12,14 @@ type ActiveMember = {
 export const members: ActiveMember[] = [
   {
     name: 'Aarian Dhanani',
-    image: '/images/zp_logo.png',
+    image: 'https://media.licdn.com/dms/image/v2/D5603AQGEPnupBp1EtQ/profile-displayphoto-shrink_400_400/B56ZUrNIGNHsAg-/0/1740186616702?e=1758758400&v=beta&t=9v1GT0g_zaZA3caXxft_K_-n9tPs3uVa1iZck9YefAU',
     major: 'Biomedical Engineering',
     graduation: '2027',
     linkedin: 'https://linkedin.com/in/aariandhanani/',
   },
   {
     name: 'Aaron Chen',
-    image: '/images/zp_logo.png',
+    image: 'https://media.licdn.com/dms/image/v2/D4E03AQHu1-DwnWfuzw/profile-displayphoto-shrink_400_400/B4EZSWLMjtHAAg-/0/1737686305287?e=1758758400&v=beta&t=jB72Hrnhu4DOmqUx-3fBp01IBBCrPyf4Oh8kQ_2PGYI',
     major: 'Mechanical Engineering',
     graduation: '2027',
     linkedin: 'https://www.linkedin.com/in/aaron-chen-aa836a332/',
