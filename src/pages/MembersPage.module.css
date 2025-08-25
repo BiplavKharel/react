@@ -1,0 +1,22 @@
+
+
+@import url('../styles/variables.css');
+
+.page {
+  padding: var(--spacing-xxl);
+  font-family: var(--font-family-rubik);
+  min-height: 100vh;
+  background-color: var(--color-primary-dark);
+  color: var(--color-text-light);
+}
+
+.content {
+  margin-top: var(--spacing-xl);
+}
+
+h2 {
+  font-size: 24px;
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text-light);
+  margin-bottom: var(--spacing-md);
+}
