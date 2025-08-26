@@ -26,7 +26,9 @@ function App() {
                 <Route path="/about" element={<AboutPage />} />
                 <Route path="/members" element={<MembersPage />} />
                 <Route path="/committees" element={<CommitteesPage/>} />
-                <Route path="/contact" element={<div>Contact Page Content</div>} />
+                <Route path="/contact" element={
+                    <div id={"contact404"}>This page is still being worked on.<br></br><br></br>You can still contact us at zetapi-info@umich.edu!</div>
+                } />
                 <Route path="/rush" element={<RushPage />} />
             </Routes>
             <Footer />

@@ -264,3 +264,11 @@ h1, h2, h3, h4 {
     padding: 10px;
   }
 }
+
+/* TODO: remove this when contact form is properly implemented */
+#contact404 {
+  text-align: center;
+  font-size: xx-large;
+  color: var(--color-accent-medium);
+}
+/* *********************************************************** */
