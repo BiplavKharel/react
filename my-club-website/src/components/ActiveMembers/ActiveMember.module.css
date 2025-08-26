@@ -1,42 +1,29 @@
 @import url('../../styles/variables.css');
 
-.wrapper {
-  padding: var(--spacing-5xl) var(--spacing-xl);
-  margin: 0 auto;
-  max-width: 1300px;
-}
+/* This file now matches class names in ActiveMember.tsx:
+   .memberCard, .imageWrapper, .photo, .overlay, .name
+*/
 
-.title {
-  font-size: 24px;
-  font-weight: var(--font-weight-bold);
-  margin-bottom: var(--spacing-3xl);
-  color: white;
-  text-align: center;
-}
-
-.grid {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 48px;
-  row-gap: 64px;
-}
-
-.card {
-  width: 180px;
+/* FIXED: width is responsive, capped by max-width */
+.memberCard {
+  width: 100%;
+  max-width: 180px;
   text-align: center;
   font-family: var(--font-family-rubik);
+  transition: transform 0.3s ease;
 }
+
+.memberCard:hover { transform: translateY(-4px); }
 
 .imageWrapper {
   position: relative;
   width: 100%;
-  height: 220px;
+  aspect-ratio: 4 / 5;
   overflow: hidden;
   border-radius: var(--border-radius-sm);
 }
 
-.image {
+.photo {
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -45,16 +32,11 @@
   transition: transform 0.3s ease;
 }
 
-.imageWrapper:hover .image {
-  transform: scale(1.05);
-}
+.imageWrapper:hover .photo { transform: scale(1.05); }
 
 .overlay {
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+  inset: 0;
   background-color: rgba(255, 255, 255, 0.85);
   color: var(--color-primary-dark);
   font-weight: 500;
@@ -71,9 +53,7 @@
   border-radius: var(--border-radius-sm);
 }
 
-.imageWrapper:hover .overlay {
-  opacity: 1;
-}
+.imageWrapper:hover .overlay { opacity: 1; }
 
 .name {
   margin-top: var(--spacing-xs);
@@ -84,40 +64,14 @@
   transition: color 0.2s ease;
 }
 
-.name:hover {
-  color: var(--color-accent-light);
-}
+.name:hover { color: var(--color-accent-light); }
 
-/* Mobile responsiveness */
+/* Mobile tweaks */
 @media (max-width: 768px) {
-  .card {
-    width: 160px;
-  }
-  
-  .imageWrapper {
-    height: 180px;
-  }
-  
-  .name {
-    font-size: 14px;
-  }
+  .memberCard { max-width: 160px; } /* FIXED: shrink cap */
 }
 
 @media (max-width: 480px) {
-  .card {
-    width: 140px;
-  }
-  
-  .imageWrapper {
-    height: 160px;
-  }
-  
-  .name {
-    font-size: 13px;
-  }
-  
-  .overlay {
-    font-size: 12px;
-    padding: 8px;
-  }
+  .memberCard { max-width: 150px; } /* FIXED: shrink cap */
+  .name { font-size: 13px; }
 }

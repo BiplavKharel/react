@@ -1,4 +1,4 @@
-// ActiveMember.tsx
+// ActiveMember.tsx (refactored to match CSS class names)
 import React from 'react';
 import styles from './ActiveMember.module.css';
 
@@ -25,19 +25,20 @@ const ActiveMember: React.FC<ActiveMemberProps> = ({
     const target = e.target as HTMLImageElement;
     if (target.src !== DEFAULT_IMG) {
       target.src = DEFAULT_IMG;
-      target.onerror = null; // Prevent infinite loop
+      target.onerror = null;
     }
   };
 
   return (
     <div className={styles.memberCard}>
       <div className={styles.imageWrapper}>
-        <img 
-          src={imgSrc} 
-          alt={name} 
-          className={styles.photo} 
+        <img
+          src={imgSrc}
+          alt={name}
+          className={styles.photo}
           onError={handleImageError}
           loading="lazy"
+          decoding="async"
         />
         <div className={styles.overlay}>
           <p><strong>Major:</strong> {major}</p>

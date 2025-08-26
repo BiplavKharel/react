@@ -1,35 +1,41 @@
 @import url('../../styles/variables.css');
 
 .gridWrapper {
-  padding: var(--spacing-5xl) var(--spacing-xl); /* More overall space */
+  padding: var(--spacing-5xl) var(--spacing-xl);
   margin: 0 auto;
   max-width: 1300px;
   display: flex;
   flex-direction: column;
-  gap: var(--spacing-4xl); /* Larger vertical gap between rows */
+  gap: var(--spacing-4xl);
+}
+
+/* Desktop default: keep manual rows (3,4,4) */
+.grid {
+  display: block;
 }
 
 .gridRow {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  gap: 48px; /* <<< Larger gap between individual cards */
-  row-gap: 64px; /* Optional: makes row gaps even bigger if needed */
+  gap: 48px;
+  row-gap: 64px;
 }
 
-/* Mobile responsiveness */
+/* Mobile: switch to a 2-column unified grid */
 @media (max-width: 768px) {
-  .gridWrapper {
-    padding: var(--spacing-3xl) var(--spacing-md);
-    gap: var(--spacing-2xl);
-  }
-  
-  .gridRow {
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 24px;
-    row-gap: 32px;
+    justify-items: center;
+  }
+  .gridRow {
+    display: contents; /* flatten rows so items flow into the 2-col grid */
+    gap: 0;
+    row-gap: 0;
   }
 }
-
 
 .fadeIn {
   animation: fadeInUp 0.4s ease-out forwards;
@@ -37,33 +43,6 @@
 }
 
 @keyframes fadeInUp {
-  0% {
-    opacity: 0;
-    transform: translateY(12px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-/* Polaroid card style */
-.polaroid {
-  width: 240px;
-  height: 380px;
-  background-color: #0d2e25;
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
-  border-radius: var(--border-radius-md);
-  padding: var(--spacing-sm);
-  text-align: center;
-  font-family: var(--font-family-rubik);
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-.polaroid:hover {
-  transform: translate;
+  0% { opacity: 0; transform: translateY(12px); }
+  100% { opacity: 1; transform: translateY(0); }
 }

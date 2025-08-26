@@ -34,27 +34,27 @@ const Footer: React.FC = () => {
                     <ul className={styles.menuList}>
                         <li>
                             <Link 
-                                to="/eboard" 
+                                to="/members" 
                                 onClick={() => window.scrollTo(0,0)}
-                                className={location.pathname == "./eboard" ? styles.activeLink : ''}>Members</Link>
+                                className={location.pathname === "/members" ? styles.activeLink : ''}>Members</Link>
                         </li>
                         <li>
                             <Link
                                 to="/committees"
                                 onClick={() => window.scrollTo(0,0)}
-                                className={location.pathname == "./committees" ? styles.activeLink : ''}>Committees</Link>
+                                className={location.pathname === "/committees" ? styles.activeLink : ''}>Committees</Link>
                         </li>
                         <li>
                             <Link
                                 to="/contact"
                                 onClick={() => window.scrollTo(0,0)}
-                                className={location.pathname == "./contact" ? styles.activeLink : ''}>Contact</Link>
+                                className={location.pathname === "/contact" ? styles.activeLink : ''}>Contact</Link>
                         </li>
                         <li>
                             <Link
                                 to="/rush"
                                 onClick={() => window.scrollTo(0,0)}
-                                className={location.pathname == "./rush" ? styles.activeLink : ''}>Rush</Link>
+                                className={location.pathname === "/rush" ? styles.activeLink : ''}>Rush</Link>
                         </li>
                     </ul>
                 </div>   
@@ -62,7 +62,7 @@ const Footer: React.FC = () => {
 
             {/* All rights reserved statement */}
             <div className={styles.bottomText}>
-                2023 Zeta Pi | All Rights Reserved
+                2024 Zeta Pi | All Rights Reserved
             </div>
         </footer>
     </>

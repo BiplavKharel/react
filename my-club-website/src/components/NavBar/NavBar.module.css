@@ -10,7 +10,7 @@
 .menuRight {
   display: flex;
   align-items: center;
-  justify-content: space-between; /* Distribute logo, links, and icons */
+  justify-content: space-between;
   padding: 2% 6%;
 }
 
@@ -19,26 +19,17 @@
   width: 91.71px;
   height: 80px;
 }
+.keycapLogo.clicked { transform: scale(0.95) translateY(4px); opacity: 0.8; }
 
-.keycapLogo.clicked {
-  transform: scale(0.95) translateY(4px);
-  opacity: 0.8;
-}
-
-.navLinks {
-  flex: 1;
-  z-index: 2;
-}
-
+.navLinks { flex: 1; z-index: 2; }
 .navLinks ul {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 2rem; /* spacing between nav items */
+  gap: 2rem;
   margin: 0;
   padding: 0;
 }
-
 .navLinks ul li a {
   color: var(--color-accent-medium);
   text-decoration: none;
@@ -47,204 +38,105 @@
   font-weight: var(--font-weight-medium);
   word-wrap: break-word;
   transition: color 0.3s ease, border-bottom-color 0.3s ease;
-  border-bottom: 2px solid transparent; /* underline handled via border for reliability */
+  border-bottom: 2px solid transparent;
 }
-
-/* Hover = neon color, only if NOT active */
-.navLinks ul li a:hover:not(.activeLink) {
-  color: var(--color-accent-neon);
-}
-
-/* Prevent focus from making it look hovered after click */
+.navLinks ul li a:hover:not(.activeLink) { color: var(--color-accent-neon); }
 .navLinks ul li a:focus,
-.navLinks ul li a:focus-visible {
-  color: var(--color-accent-medium);
-  outline: 2px solid transparent; /* keep layout stable; add custom outline if desired */
-}
+.navLinks ul li a:focus-visible { color: var(--color-accent-medium); outline: 2px solid transparent; }
+.navLinks ul li a.activeLink { color: var(--color-accent-medium); padding-bottom: 4px; border-bottom-color: var(--color-accent-neon); }
+.navLinks ul li a.activeLink:hover { color: var(--color-accent-medium); }
 
-/* Active link = base text color + persistent neon underline */
-.navLinks ul li a.activeLink {
-  color: var(--color-accent-medium);                 /* <-- base color, not neon */
-  padding-bottom: 4px;
-  border-bottom-color: var(--color-accent-neon);    /* underline stays */
-}
+.icons { display: flex; }
+.icons i { font-size: var(--spacing-xxl); color: var(--color-accent-medium); transition: color 0.3s ease; }
+.icons i:hover { color: var(--color-accent-neon); }
+.Li { color: var(--color-accent-medium); font-size: var(--spacing-xxxl); margin-right: var(--spacing-md); width: 100%; height: 100%; }
+.Li:hover { color: var(--color-accent-neon); }
 
-/* Don't recolor active link on hover */
-.navLinks ul li a.activeLink:hover {
-  color: var(--color-accent-medium);
-}
-
-.icons {
-  display: flex;
-}
-
-.icons i {
-  font-size: var(--spacing-xxl);
-  color: var(--color-accent-medium);
-  transition: color 0.3s ease;
-}
-
-.icons i:hover {
-  color: var(--color-accent-neon);
-}
-
-.Li {
-  color: var(--color-accent-medium);
-  font-size: var(--spacing-xxxl);
-  margin-right: var(--spacing-md);
-  width: 100%;
-  height: 100%;
-}
-
-.Li:hover {
-  color: var(--color-accent-neon);
-}
-
-/* Mobile Menu Toggle */
+/* mobile hamburger (fixed, top-right) */
 .menuToggle {
   display: block;
-  position: relative;
+  position: fixed;
   top: 0;
-  z-index: 1001;
+  right: 0.75rem;
+  z-index: 9999;
   -webkit-user-select: none;
   user-select: none;
+  background: none;
+  border: none;
+  padding: 0.75rem 0.5rem; /* bigger tap target */
 }
-
-.menuToggle a {
-  text-decoration: none;
-  color: var(--color-accent-light);
-  transition: all 0.3s ease;
-  display: inline-block;
-  padding: 0;
-  margin: 0;
-}
-
-.menuToggle input {
-  display: block;
-  width: 40px;
-  height: 32px;
-  position: absolute;
-  top: -7px;
-  cursor: pointer;
-  opacity: 0;
-  z-index: 1002;
-  -webkit-touch-callout: none;
-}
-
 .menuToggle span {
-  position: relative;
   display: block;
   width: 33px;
   height: 4px;
   margin-bottom: 5px;
   background: var(--color-accent-neon);
   border-radius: 3px;
-  z-index: 1;
-  transform-origin: 4px 0px;
-  transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0),
-              background 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0),
-              opacity 0.55s ease;
 }
 
-.menuToggle span:first-child {
-  transform-origin: 0% 0%;
-}
-
-.menuToggle span:nth-last-child(2) {
-  transform-origin: 0% 100%;
-}
-
-.menuToggle input:checked ~ span {
-  opacity: 1;
-  transform: rotate(45deg) translate(-2px, -1px);
-  background: var(--color-accent-light);
-}
-
-.menuToggle input:checked ~ span:nth-last-child(3) {
-  opacity: 0;
-  transform: rotate(0deg) scale(0.2, 0.2);
-}
-
-.menuToggle input:checked ~ span:nth-last-child(2) {
-  transform: rotate(-45deg) translate(0, -1px);
-}
-
+/* slide-out mobile menu */
 .menuItem {
-  position: absolute;
-  width: 300px;
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  right: 0;
+  top: 0;
   padding: var(--spacing-4xl);
-  padding-top: var(--spacing-7xl);
+  padding-top: var(--spacing-7xl); /* room for close button */
   background: black;
   list-style-type: none;
   -webkit-font-smoothing: antialiased;
   transform-origin: 0% 0%;
+  transform: translateX(100%);    /* closed by default */
   transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0);
   z-index: 1000;
 }
+/* exported class used by TSX */
+.menuItemOpen { transform: translateX(0); }
 
-.menuItem li {
-  padding: var(--spacing-sm) 0;
-  font-size: var(--spacing-xxl);
-}
+.menuItem li { padding: var(--spacing-sm) 0; font-size: var(--spacing-xxl); }
+.menuItem a { color: var(--color-accent-medium); text-decoration: none; transition: color 0.25s ease; }
+.menuItem a:hover { color: var(--color-accent-neon); }
 
-.menuRight .menuToggle {
-  position: fixed;
-  right: var(--spacing-xl);
-  top: var(--spacing-xxxl);
+/* plain text × close button */
+.menuClose {
+  position: absolute;
+  top: 0.75rem;
+  right: 0.75rem;
+  font-size: 2rem;
+  line-height: 1;
+  color: var(--color-accent-medium); /* same as nav text */
+  cursor: pointer;
+  background: none;
+  border: none;
+  padding: 0.25rem;
   z-index: 1001;
 }
+.menuClose:hover { color: var(--color-accent-neon); }
 
-.menuRight .menuToggle input {
-  right: var(--spacing-4xl);
-}
-
-.menuRight .menuToggle span {
-  right: var(--spacing-4xl);
-}
-
-.menuRight .menuItem {
-  right: 0;
-  margin: -100px 0 0 0;
-  transform: translate(100%, 0);
-}
-
-/* Media Queries for Navbar */
+/* responsive visibility */
 @media screen and (max-width: 1155px) {
-  .navLinks {
-    display: none;
-  }
-
-  .menuItem {
-    width: 250px;
-    height: 1000px;
-  }
-
-  .icons {
-    display: none;
-  }
+  .navLinks { display: none; }
+  .icons { display: none; }
 }
-
 @media screen and (min-width: 1156px) {
-  .menuToggle {
-    display: none;
-  }
-
-  .icons {
-    display: flex;
-  }
-
-  .icons a {
-    flex: 1;
-  }
+  .menuToggle { display: none; } /* hide burger on desktop */
+  .icons { display: flex; }
+  .icons a { flex: 1; }
 }
 
+/* centered desktop nav list */
 .centerAlignC {
   display: flex;
   justify-content: center;
   list-style: none;
   padding: 0;
 }
-
-.centerAlignC li {
-  margin: 0 var(--spacing-lg);
+.centerAlignC li { margin: 0 var(--spacing-lg); }
+.keycapLogo {
+  transition: transform 0.2s ease, opacity 0.2s ease;
+  width: 91.71px;
+  height: 80px;
+  background: url('/images/keycap-logo.png') no-repeat center center;
+  background-size: contain;
 }

@@ -11,7 +11,9 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 // import ContactPage from './pages/ContactPage';
  import RushPage from './pages/RushPage';
 
-import { NavBar } from './components/NavBar/NavBar'; // Always present
+// MUST be default import:
+import NavBar from './components/NavBar/NavBar';
+
 import { Footer } from './components/Footer/Footer'; 
 
 function App() {

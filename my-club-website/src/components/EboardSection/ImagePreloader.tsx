@@ -7,7 +7,9 @@ interface ImagePreloaderProps {
 const ImagePreloader: React.FC<ImagePreloaderProps> = ({ images }) => {
   useEffect(() => {
     // Only preload on faster connections to avoid wasting mobile data
-    const connection = (navigator as any).connection || (navigator as any).mozConnection || (navigator as any).webkitConnection;
+    const connection = (navigator as Navigator & { connection?: { effectiveType?: string }; mozConnection?: { effectiveType?: string }; webkitConnection?: { effectiveType?: string } }).connection || 
+                      (navigator as Navigator & { mozConnection?: { effectiveType?: string } }).mozConnection || 
+                      (navigator as Navigator & { webkitConnection?: { effectiveType?: string } }).webkitConnection;
     const isSlowConnection = connection && (connection.effectiveType === 'slow-2g' || connection.effectiveType === '2g');
     
     if (isSlowConnection) {
