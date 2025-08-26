@@ -105,7 +105,7 @@
   display: block;
   position: relative;
   top: 0;
-  z-index: 1;
+  z-index: 1001;
   -webkit-user-select: none;
   user-select: none;
 }
@@ -127,7 +127,7 @@
   top: -7px;
   cursor: pointer;
   opacity: 0;
-  z-index: 2;
+  z-index: 1002;
   -webkit-touch-callout: none;
 }
 
@@ -142,8 +142,8 @@
   z-index: 1;
   transform-origin: 4px 0px;
   transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0),
-              background 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0),
-              opacity 0.55s ease;
+  background 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0),
+  opacity 0.55s ease;
 }
 
 .menuToggle span:first-child {
@@ -179,6 +179,7 @@
   -webkit-font-smoothing: antialiased;
   transform-origin: 0% 0%;
   transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0);
+  z-index: 1000;
 }
 
 .menuItem li {
@@ -190,6 +191,7 @@
   position: fixed;
   right: var(--spacing-xl);
   top: var(--spacing-xxxl);
+  z-index: 1001;
 }
 
 .menuRight .menuToggle input {

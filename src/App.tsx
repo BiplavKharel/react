@@ -22,7 +22,7 @@ function App() {
         {/* Uncomment and update the HomePage import at the top */}
         <Route path="/" element={<HomePage />} />
         <Route path="/about" element={<AboutPage />} />
-        <Route path="/eboard" element={<MembersPage />} />
+        <Route path="/members" element={<MembersPage />} />
         <Route path="/committees" element={<CommitteesPage/>} />
         <Route path="/contact" element={<div>Contact Page Content</div>} />
         <Route path="/rush" element={<RushPage />} />

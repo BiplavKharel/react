@@ -87,3 +87,37 @@
 .name:hover {
   color: var(--color-accent-light);
 }
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  .card {
+    width: 160px;
+  }
+
+  .imageWrapper {
+    height: 180px;
+  }
+
+  .name {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .card {
+    width: 140px;
+  }
+
+  .imageWrapper {
+    height: 160px;
+  }
+
+  .name {
+    font-size: 13px;
+  }
+
+  .overlay {
+    font-size: 12px;
+    padding: 8px;
+  }
+}

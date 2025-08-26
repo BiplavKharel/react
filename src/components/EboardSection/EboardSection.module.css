@@ -17,6 +17,19 @@
   row-gap: 64px; /* Optional: makes row gaps even bigger if needed */
 }
 
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  .gridWrapper {
+    padding: var(--spacing-3xl) var(--spacing-md);
+    gap: var(--spacing-2xl);
+  }
+
+  .gridRow {
+    gap: 24px;
+    row-gap: 32px;
+  }
+}
+
 
 .fadeIn {
   animation: fadeInUp 0.4s ease-out forwards;

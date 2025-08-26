@@ -22,7 +22,7 @@
   display: flex;
   justify-content: center;
   gap: 40px;
-  flex-wrap: nowrap;
+  flex-wrap: wrap;
 }
 
 .card {
@@ -34,6 +34,88 @@
   transition: transform 0.3s ease;
   animation: fadeInUp 0.4s ease-out forwards;
   opacity: 0;
+  flex: 0 0 auto;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  .wrapper {
+    padding: var(--spacing-3xl) var(--spacing-md);
+    gap: var(--spacing-2xl);
+  }
+
+  .gridRow {
+    gap: 24px;
+    justify-content: space-around;
+  }
+
+  .card {
+    width: 150px;
+  }
+
+  .imageWrapper {
+    height: 150px;
+  }
+}
+
+@media (max-width: 480px) {
+  .wrapper {
+    padding: var(--spacing-2xl) var(--spacing-sm);
+  }
+
+  .gridRow {
+    gap: 16px;
+    justify-content: space-between;
+  }
+
+  .card {
+    width: 130px;
+  }
+
+  .imageWrapper {
+    height: 130px;
+  }
+
+  .name {
+    font-size: 0.9rem;
+  }
+
+  .overlay {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 360px) {
+  .wrapper {
+    padding: var(--spacing-xl) var(--spacing-xs);
+  }
+
+  .gridRow {
+    gap: 12px;
+    justify-content: center;
+  }
+
+  .card {
+    width: 110px;
+  }
+
+  .imageWrapper {
+    height: 110px;
+  }
+
+  .name {
+    font-size: 0.85rem;
+    margin-top: var(--spacing-xxs);
+  }
+
+  .overlay {
+    font-size: 11px;
+    padding: 6px;
+  }
+
+  .title {
+    font-size: 1.5rem;
+  }
 }
 
 .card:hover {
@@ -93,6 +175,9 @@
   text-align: center;
   text-decoration: none;
   transition: color 0.2s ease;
+  word-wrap: break-word;
+  hyphens: auto;
+  line-height: 1.2;
 }
 
 .name:hover {

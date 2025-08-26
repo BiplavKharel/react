@@ -13,37 +13,51 @@ type ActiveMemberProps = {
 const DEFAULT_IMG = '/images/zp_logo.png';
 
 const ActiveMember: React.FC<ActiveMemberProps> = ({
-  image,
-  name,
-  major,
-  graduation,
-  linkedin
-}) => {
+                                                     image,
+                                                     name,
+                                                     major,
+                                                     graduation,
+                                                     linkedin
+                                                   }) => {
   const imgSrc = image && image.trim() ? image : DEFAULT_IMG;
 
-  return (
-    <div className={styles.memberCard}>
-      <div className={styles.imageWrapper}>
-        <img src={imgSrc} alt={name} className={styles.photo} />
-        <div className={styles.overlay}>
-          <p><strong>Major:</strong> {major}</p>
-          <p><strong>Class of:</strong> {graduation}</p>
-        </div>
-      </div>
+  const handleImageError = (e: React.SyntheticEvent<HTMLImageElement, Event>) => {
+    const target = e.target as HTMLImageElement;
+    if (target.src !== DEFAULT_IMG) {
+      target.src = DEFAULT_IMG;
+      target.onerror = null; // Prevent infinite loop
+    }
+  };
 
-      {linkedin && linkedin.trim() ? (
-        <a
-          href={linkedin}
-          target="_blank"
-          rel="noopener noreferrer"
-          className={styles.name}
-        >
-          {name}
-        </a>
-      ) : (
-        <span className={styles.name}>{name}</span>
-      )}
-    </div>
+  return (
+      <div className={styles.memberCard}>
+        <div className={styles.imageWrapper}>
+          <img
+              src={imgSrc}
+              alt={name}
+              className={styles.photo}
+              onError={handleImageError}
+              loading="lazy"
+          />
+          <div className={styles.overlay}>
+            <p><strong>Major:</strong> {major}</p>
+            <p><strong>Class of:</strong> {graduation}</p>
+          </div>
+        </div>
+
+        {linkedin && linkedin.trim() ? (
+            <a
+                href={linkedin}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={styles.name}
+            >
+              {name}
+            </a>
+        ) : (
+            <span className={styles.name}>{name}</span>
+        )}
+      </div>
   );
 };
 
