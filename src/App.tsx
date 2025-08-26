@@ -5,7 +5,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
  import HomePage from './pages/HomePage';
  import AboutPage from './pages/About';
  import MembersPage from './pages/MembersPage';
-
+ import ContactPage from './pages/ContactPage';
  import CommitteesPage from './pages/CommitteesPage';
 // import FAQPage from './pages/FAQPage';
 // import ContactPage from './pages/ContactPage';
@@ -24,7 +24,7 @@ function App() {
         <Route path="/about" element={<AboutPage />} />
         <Route path="/eboard" element={<MembersPage />} />
         <Route path="/committees" element={<CommitteesPage/>} />
-        <Route path="/contact" element={<div>Contact Page Content</div>} />
+        <Route path="/contact" element={<ContactPage />} />
         <Route path="/rush" element={<RushPage />} />
             </Routes>
       <Footer />
