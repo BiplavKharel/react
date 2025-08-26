@@ -3,7 +3,7 @@
 @import url('../styles/variables.css');
 
 .page {
-  padding: var(--spacing-xxl);
+  padding: var(--spacing-lg) var(--spacing-sm); /* Mobile-first: reduced padding for first row visibility */
   font-family: var(--font-family-rubik);
   min-height: 100vh;
   background-color: var(--color-primary-dark);
@@ -11,7 +11,7 @@
 }
 
 .content {
-  margin-top: var(--spacing-xl);
+  margin-top: var(--spacing-md);
 }
 
 h2 {
@@ -19,4 +19,25 @@ h2 {
   font-weight: var(--font-weight-semibold);
   color: var(--color-text-light);
   margin-bottom: var(--spacing-md);
+}
+
+/* Tablet and desktop: restore original padding */
+@media (min-width: 769px) {
+  .page {
+    padding: var(--spacing-xl);
+  }
+
+  .content {
+    margin-top: var(--spacing-lg);
+  }
+}
+
+@media (min-width: 1024px) {
+  .page {
+    padding: var(--spacing-xxl);
+  }
+
+  .content {
+    margin-top: var(--spacing-xl);
+  }
 }

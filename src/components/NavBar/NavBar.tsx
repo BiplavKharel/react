@@ -1,188 +1,96 @@
-import React, { useState } from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import React, { useEffect, useState } from 'react';
+import { useLocation, Link } from 'react-router-dom';   // ⬅️ for current path
 import styles from './NavBar.module.css';
 
 const NavBar: React.FC = () => {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const location = useLocation();
+  const [open, setOpen] = useState(false);
+  const location = useLocation(); // current URL path
 
-  const handleLogoClick = () => {
-    const logo = document.getElementById('keycap-logo');
-    if (logo) {
-      logo.classList.add(styles.clicked);
-      setTimeout(() => {
-        logo.classList.remove(styles.clicked);
-      }, 200);
+  useEffect(() => {
+    if (typeof document !== 'undefined') {
+      document.body.style.overflow = open ? 'hidden' : '';
+      return () => { document.body.style.overflow = ''; };
     }
-  };
+  }, [open]);
 
-  const toggleMenu = () => {
-    setIsMenuOpen(!isMenuOpen);
-  };
+  const closeMenu = () => setOpen(false);
+
+  const links = [
+    { href: '/', label: 'Home' },
+    { href: '/rush', label: 'Rush' },
+    { href: '/members', label: 'Members' },
+    { href: '/contact', label: 'Contact' },
+  ];
 
   return (
-      <section className={styles.navBar}>
-        <nav className={styles.menuRight} role="navigation">
-          <Link to="/" id="logo-link" onClick={handleLogoClick}>
-            <img
-                src="/images/zp_logo.png"
-                id="keycap-logo"
-                alt="Zeta Pi Logo"
-                className={styles.keycapLogo}
-            />
-          </Link>
+      <nav className={styles.navBar}>
+        <div className={styles.menuRight}>
+          {/* Logo uses background-image in CSS */}
+          <Link to="/" className={styles.keycapLogo} aria-label="Home"></Link>
 
-          {/* Desktop Navigation */}
-          <div className={styles.navLinks}>
+          {/* Desktop links */}
+          <div className={styles.navLinks} aria-label="Primary">
             <ul className={styles.centerAlignC}>
-              <li>
-                <Link
-                    to="/"
-                    className={`hvr-sweep-to-right ${
-                        location.pathname === '/' ? styles.activeLink : ''
-                    }`}
-                >
-                  About
-                </Link>
-              </li>
-              <li>
-                <Link
-                    to="/rush"
-                    className={`hvr-sweep-to-right ${
-                        location.pathname === '/rush' ? styles.activeLink : ''
-                    }`}
-                >
-                  Rush
-                </Link>
-              </li>
-              <li>
-                <Link
-                    to="/members"
-                    className={`hvr-sweep-to-right ${
-                        location.pathname === '/members' ? styles.activeLink : ''
-                    }`}
-                >
-                  Members
-                </Link>
-              </li>
-              <li>
-                <Link
-                    to="/committees"
-                    className={`hvr-sweep-to-right ${
-                        location.pathname === '/committees' ? styles.activeLink : ''
-                    }`}
-                >
-                  Committees
-                </Link>
-              </li>
-              <li>
-                <Link
-                    to="/contact"
-                    className={`hvr-sweep-to-right ${
-                        location.pathname === '/contact' ? styles.activeLink : ''
-                    }`}
-                >
-                  Contact
-                </Link>
-              </li>
+              {links.map(link => (
+                  <li key={link.href}>
+                    <Link
+                        to={link.href}
+                        className={location.pathname === link.href ? styles.activeLink : ''}
+                    >
+                      {link.label}
+                    </Link>
+                  </li>
+              ))}
             </ul>
           </div>
 
-          {/* Social Media Icons (Desktop) */}
-          <div className={styles.icons} id="socialMedia">
-            <a
-                href="https://www.linkedin.com/company/91309323/admin/feed/posts/"
-                target="_blank"
-                rel="noopener noreferrer"
-            >
-              <i className="Li fab fa-linkedin"></i>
-            </a>
-            <a
-                href="https://www.instagram.com/zetapi.umich/"
-                target="_blank"
-                rel="noopener noreferrer"
-            >
-              <i className="Li fab fa-instagram"></i>
-            </a>
-            <a
-                href="https://www.tiktok.com/@zetapiumich"
-                target="_blank"
-                rel="noopener noreferrer"
-            >
-              <i className="Li fab fa-tiktok"></i>
-            </a>
-          </div>
+          {/* Mobile hamburger — hidden while menu is open */}
+          {!open && (
+              <button
+                  type="button"
+                  className={styles.menuToggle}
+                  aria-label="Open menu"
+                  aria-controls="mobileMenu"
+                  aria-expanded={false}
+                  onClick={() => setOpen(true)}
+              >
+                <span /><span /><span />
+              </button>
+          )}
+        </div>
 
-          {/* Mobile Menu Toggle */}
-          <div className={styles.menuToggle}>
-            <input type="checkbox" checked={isMenuOpen} onChange={toggleMenu} />
-            <span></span>
-            <span></span>
-            <span></span>
-            <ul
-                className={styles.menuItem}
-                style={{ transform: isMenuOpen ? 'none' : 'translate(100%, 0)' }}
-            >
-              <li>
+        {/* Slide-out mobile menu */}
+        <ul
+            id="mobileMenu"
+            className={`${styles.menuItem} ${open ? styles.menuItemOpen : ''}`}
+            role="menu"
+            aria-hidden={!open}
+        >
+          {/* Close button */}
+          <button
+              type="button"
+              className={styles.menuClose}
+              aria-label="Close menu"
+              onClick={closeMenu}
+          >
+            ×
+          </button>
+
+          {links.map(link => (
+              <li key={link.href} role="none">
                 <Link
-                    to="/"
-                    className={`hvr-sweep-to-right ${
-                        location.pathname === '/' ? styles.activeLink : ''
-                    }`}
-                    onClick={() => setIsMenuOpen(false)}
+                    role="menuitem"
+                    to={link.href}
+                    onClick={closeMenu}
+                    className={location.pathname === link.href ? 'activeLink' : ''}
                 >
-                  About
+                  {link.label}
                 </Link>
               </li>
-              <li>
-                <Link
-                    to="/rush"
-                    className={`hvr-sweep-to-right ${
-                        location.pathname === '/rush' ? styles.activeLink : ''
-                    }`}
-                    onClick={() => setIsMenuOpen(false)}
-                >
-                  Rush
-                </Link>
-              </li>
-              <li>
-                <Link
-                    to="/members"
-                    className={`hvr-sweep-to-right ${
-                        location.pathname === '/members' ? styles.activeLink : ''
-                    }`}
-                    onClick={() => setIsMenuOpen(false)}
-                >
-                  Members
-                </Link>
-              </li>
-              <li>
-                <Link
-                    to="/committees"
-                    className={`hvr-sweep-to-right ${
-                        location.pathname === '/committees' ? styles.activeLink : ''
-                    }`}
-                    onClick={() => setIsMenuOpen(false)}
-                >
-                  Committees
-                </Link>
-              </li>
-              <li>
-                <Link
-                    to="/contact"
-                    className={`hvr-sweep-to-right ${
-                        location.pathname === '/contact' ? styles.activeLink : ''
-                    }`}
-                    onClick={() => setIsMenuOpen(false)}
-                >
-                  Contact
-                </Link>
-              </li>
-            </ul>
-          </div>
-        </nav>
-      </section>
+          ))}
+        </ul>
+      </nav>
   );
 };
 
-export { NavBar };
+export default NavBar;
